@@ -106,7 +106,7 @@ post '/create_charge' do
       :amount => params[:amount], # this number should be in cents
       :currency => "HKD",
       :source => params[:source],
-      :description => "Example Charge"
+      :description => params[:description]
     )
   rescue Stripe::StripeError => e
     status 402
